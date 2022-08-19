@@ -1,26 +1,99 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.modal_popup {
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px !important;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.user_img {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-* {
-  box-sizing: border-box;
+.user_name {
+  padding-bottom: 0.5rem;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  color: #EE1898;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.sub_title {
+  padding-bottom: 0.2rem;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #5F5D5D;
+}
+
+.question_title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  color: #EE1898;
+}
+
+.horizental_line {
+  border: 1px solid #AEAEAE;
+}
+
+.date_group_area .label_title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #3D3838;
+}
+
+.date_group_area textarea {
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px solid #AEAEAE;
+  border-radius: 4px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #5F5D5D;
+  height: 157px;
+  padding: 19px 20px;
+}
+
+.date_group_area .offer_btn {
+  background: linear-gradient(270deg, #8D09CB -0.9%, #F41BC5 82.96%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+
+.date_group_area .input_box {
+  background: #FFFFFF;
+  border: 1px solid #AEAEAE;
+  border-radius: 1px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: rgba(0, 0, 0, 0.66);
+}
+
+.date_group_area .input_box .chevron {
+  color: rgba(0, 0, 0, 0.4);
+  width: 12px;
 }
