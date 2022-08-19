@@ -41,7 +41,7 @@ export default function UserModal() {
         <div className='pt-[60px] pb-[21px] px-[42px]'>
 
             {/* info-section like image, name*/}
-            <div className='flex gap-5'>
+            <div className='flex gap-5 flex-col items-center sm:flex-row sm:items-start'>
                 <div>
                     <img className='w-[84px] h-[80px] rounded-full user_img' src='/assets/images/userImg.png' />
                 </div>
@@ -61,7 +61,7 @@ export default function UserModal() {
                 <div>
                     <label className='label_title'>Tell me your preffered date and group size</label>
                     <div className='mt-2 grid grid-cols-2 gap-x-3 gap-y-4'>
-                        <Popover className="relative">
+                        <Popover className="relative col-span-2 sm:col-span-1">
                             <Popover.Button className="input_box w-full px-6 py-2 flex justify-between items-center">
                                 {dateFormat(startDate, "dd mmm")}
                                 <span className='chevron'>
@@ -76,7 +76,7 @@ export default function UserModal() {
                             </Popover.Panel>
                         </Popover>
 
-                        <Popover className="relative">
+                        <Popover className="relative col-span-2 sm:col-span-1">
                             <Popover.Button className="input_box w-full px-6 py-2 flex justify-between items-center">
                                 {dateFormat(startTime, "h: MM")}
                                 <span className='chevron'>
@@ -100,72 +100,76 @@ export default function UserModal() {
                         </Popover>
 
                         {/* adults */}
-                        
-                        <Listbox value={selectedAdult} onChange={setSelectedAdult}>
-                            <div className='relative'>
-                                <Listbox.Button className="input_box w-full pl-1 pr-6 py-[0.4rem] flex justify-between items-center">
-                                    <div className='flex items-center gap-2'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                            <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z" fill="black" fillOpacity="0.3" />
-                                        </svg>
-                                        {selectedAdult.value} Adults
-                                    </div>
-                                    <span className="chevron">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </span></Listbox.Button>
+                        <div className='col-span-2 sm:col-span-1'>
+                            <Listbox value={selectedAdult} onChange={setSelectedAdult}>
+                                <div className='relative'>
+                                    <Listbox.Button className="input_box w-full pl-1 pr-6 py-[0.4rem] flex justify-between items-center">
+                                        <div className='flex items-center gap-2'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
+                                                <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z" fill="black" fillOpacity="0.3" />
+                                            </svg>
+                                            {selectedAdult.value} Adults
+                                        </div>
+                                        <span className="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </span></Listbox.Button>
 
-                                <Listbox.Options className='absolute w-full  px-1 py-3 rounded border bg-white z-20'>
-                                    {adults.map((adult) => (
-                                        <Listbox.Option
-                                            className={` ${adult.id === selectedAdult.id ? 'bg-blue-200' : ''} 
+                                    <Listbox.Options className='absolute w-full  px-1 py-3 rounded border bg-white z-20'>
+                                        {adults.map((adult) => (
+                                            <Listbox.Option
+                                                className={` ${adult.id === selectedAdult.id ? 'bg-blue-200' : ''} 
                                              hover:bg-gray-200 rounded px-2 my-1 cursor-pointer flex gap-2 items-center`}
-                                            key={adult.id}
-                                            value={adult}
-                                        >
-                                            {adult.id === selectedAdult.id ? <span className='w-3'><CheckIcon width={15} /> </span> : <span className='w-3'></span>}
-                                            {adult.value} Adults
-                                        </Listbox.Option>
-                                    ))}
-                                </Listbox.Options>
-                            </div>
+                                                key={adult.id}
+                                                value={adult}
+                                            >
+                                                {adult.id === selectedAdult.id ? <span className='w-3'><CheckIcon width={15} /> </span> : <span className='w-3'></span>}
+                                                {adult.value} Adults
+                                            </Listbox.Option>
+                                        ))}
+                                    </Listbox.Options>
+                                </div>
 
-                        </Listbox>
+                            </Listbox>
+
+                        </div>
 
                         {/* childrens */}
 
-                        <Listbox value={selectedChildren} onChange={setSelectedChildren}>
-                            <div className='relative'>
-                                <Listbox.Button className="input_box w-full pl-1 pr-6 py-[0.4rem] flex justify-between items-center">
-                                    <div className='flex items-center gap-2'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                            <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z" fill="black" fillOpacity="0.3" />
-                                        </svg>
-                                        {selectedChildren.value} Childrens
-                                    </div>
-                                    <span className="chevron">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </span></Listbox.Button>
+                        <div className='col-span-2 sm:col-span-1'>
+                            <Listbox value={selectedChildren} onChange={setSelectedChildren}>
+                                <div className='relative'>
+                                    <Listbox.Button className="input_box w-full pl-1 pr-6 py-[0.4rem] flex justify-between items-center">
+                                        <div className='flex items-center gap-2'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
+                                                <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z" fill="black" fillOpacity="0.3" />
+                                            </svg>
+                                            {selectedChildren.value} Childrens
+                                        </div>
+                                        <span className="chevron">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        </span></Listbox.Button>
 
-                                <Listbox.Options className='absolute w-full  px-1 py-3 rounded border bg-white z-20'>
-                                    {childrens.map((child) => (
-                                        <Listbox.Option
-                                            className={` ${child.id === selectedChildren.id ? 'bg-blue-200' : ''}  hover:bg-gray-200 rounded px-2 my-1 cursor-pointer flex gap-2 items-center`}
-                                            key={child.id}
-                                            value={child}
-                                        >
-                                            {child.id === selectedChildren.id ? <span className='w-3'><CheckIcon width={15} /> </span> : <span className='w-3'></span>}  {child.value} Childrens
-                                        </Listbox.Option>
-                                    ))}
-                                </Listbox.Options>
-                            </div>
+                                    <Listbox.Options className='absolute w-full  px-1 py-3 rounded border bg-white z-20'>
+                                        {childrens.map((child) => (
+                                            <Listbox.Option
+                                                className={` ${child.id === selectedChildren.id ? 'bg-blue-200' : ''}  hover:bg-gray-200 rounded px-2 my-1 cursor-pointer flex gap-2 items-center`}
+                                                key={child.id}
+                                                value={child}
+                                            >
+                                                {child.id === selectedChildren.id ? <span className='w-3'><CheckIcon width={15} /> </span> : <span className='w-3'></span>}  {child.value} Childrens
+                                            </Listbox.Option>
+                                        ))}
+                                    </Listbox.Options>
+                                </div>
 
-                        </Listbox>
+                            </Listbox>
+                        </div>
 
 
                     </div>

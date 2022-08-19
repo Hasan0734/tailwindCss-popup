@@ -6,8 +6,6 @@ import UserModal from '../components/UserModal';
 const Home: NextPage = () => {
 
   const [isOpen, setIsOpen] = useState(false)
-
-
   return (
     <>
       {isOpen &&
@@ -22,8 +20,6 @@ const Home: NextPage = () => {
        bg-green-400 text-white
        font-semibold uppercase'>Open Popup !</button>
 
-
-        <div></div>
       </div>
     </>
 
