@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 
-.modal_popup {
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 4px !important;
-}
-
 .user_img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
@@ -96,4 +91,53 @@
 .date_group_area .input_box .chevron {
   color: rgba(0, 0, 0, 0.4);
   width: 12px;
+}
+
+.cookie_modal .title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+}
+
+.cookie_modal .content_text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #777777;
+}
+
+.cookie_modal .necessary_lock {
+  border: 1px solid #A5B4C5;
+  border-radius: 30px;
+  padding: 2px 8px;
+}
+
+.cookie_modal .cookie_accept {
+  background: linear-gradient(269.9deg, #00CDAC 1.45%, #38BEBB 99.91%);
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.cookie_save {
+  background: #D4D4D4;
+  border-radius: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #6D6D6D;
+  width: 100%;
 }

@@ -39,7 +39,6 @@ export default function UserModal() {
 
     return (
         <div className='pt-[60px] pb-[21px] px-[42px]'>
-
             {/* info-section like image, name*/}
             <div className='flex gap-5 flex-col items-center sm:flex-row sm:items-start'>
                 <div>

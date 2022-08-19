@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 
-export default function ModalLayout({ isOpen, setIsOpen, children }: { isOpen: boolean, setIsOpen: any, children: any }) {
+export default function ModalLayout({ isOpen, setIsOpen, children, style }:
+    {
+        isOpen: boolean, setIsOpen: any, children: any, style:
+            { center: string, size: number }
+    }) {
 
-    console.log(isOpen)
     return (
         <Dialog
             open={isOpen}
@@ -13,11 +16,12 @@ export default function ModalLayout({ isOpen, setIsOpen, children }: { isOpen: b
 
             <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
-            <div className="fixed inset-0 flex justify-center p-4  h-screen overflow-scroll scrollbar-hide">
-                <Dialog.Panel className="
-                w-full  max-w-[433px] modal_popup
-                ">
-                    <div className=' rounded bg-white'>
+            <div className={`fixed inset-0 flex  justify-center p-4 
+             h-screen overflow-scroll scrollbar-hide ${style.center}`}>
+                <Dialog.Panel className={`w-full`} style={{maxWidth: style.size}}>
+                
+                
+                    <div className=' bg-white  rounded shadow-2xl'>
                         {children}
                     </div>
                 </Dialog.Panel>
