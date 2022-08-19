@@ -4,7 +4,7 @@ import { Dialog } from '@headlessui/react'
 export default function ModalLayout({ isOpen, setIsOpen, children, style }:
     {
         isOpen: boolean, setIsOpen: any, children: any, style:
-            { center: string, size: number }
+        { center: string, size: number, boxShadow:string }
     }) {
 
     return (
@@ -21,7 +21,7 @@ export default function ModalLayout({ isOpen, setIsOpen, children, style }:
                 <Dialog.Panel className={`w-full`} style={{maxWidth: style.size}}>
                 
                 
-                    <div className=' bg-white  rounded shadow-2xl'>
+                    <div className={` bg-white rounded ${style.boxShadow}`}>
                         {children}
                     </div>
                 </Dialog.Panel>

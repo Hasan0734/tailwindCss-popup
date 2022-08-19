@@ -4,6 +4,7 @@ import dateFormat from "dateformat";
 import { Popover } from '@headlessui/react'
 import { Listbox } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/solid'
+import ModalLayout from '../ModalLayout/ModalLayout';
 
 
 
@@ -22,7 +23,7 @@ const adults = [
     { id: 5, value: 4 },
 ]
 
-export default function UserModal() {
+export default function UserModal({ isOpen, setIsOpen }: {isOpen:boolean, setIsOpen:any}) {
 
     const [startDate, setStartDate] = useState(new Date());
     const [startTime, setStartTime] = useState(new Date());
@@ -32,12 +33,16 @@ export default function UserModal() {
     const handleDateChange = (e: any) => {
         setStartDate(e);
     };
-
     const handleTimeChange = (e: any) => {
         setStartTime(e);
     };
 
     return (
+        <ModalLayout style={{
+            size: 433, center: '', boxShadow:
+                'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]'
+        }}
+            isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className='pt-[60px] pb-[21px] px-[42px]'>
             {/* info-section like image, name*/}
             <div className='flex gap-5 flex-col items-center sm:flex-row sm:items-start'>
@@ -54,7 +59,7 @@ export default function UserModal() {
                 </div>
             </div>
             {/* horizantal line */}
-            <div className='horizental_line mt-5 mb-4'></div>
+            <div className='h-[1px] bg-[#AEAEAE] mt-5 mb-4'></div>
 
             <form className='date_group_area'>
                 <div>
@@ -196,6 +201,7 @@ export default function UserModal() {
                 </div>
             </form>
 
-        </div>
+            </div>
+        </ModalLayout>
     )
 }

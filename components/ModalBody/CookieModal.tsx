@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import { Switch } from '@headlessui/react'
-export default function CookieModal() {
+import ModalLayout from '../ModalLayout/ModalLayout'
+export default function CookieModal({isOpen, setIsOpen}: {isOpen:boolean, setIsOpen:any}) {
     const [enabled, setEnabled] = useState(false)
     return (
+        <ModalLayout style={{
+            size: 269, center: 'items-center',
+            boxShadow: 'filter-none'
+        }}
+            isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className='pt-[21px] px-[19px]  pb-[7px] cookie_modal'>
             <div>
                 <h3 className='title'>Cookie settings</h3>
@@ -59,6 +65,7 @@ export default function CookieModal() {
                 <br />
                 <button className='cookie_save py-2 mt-3'>Save settings</button>
             </div>
-        </div>
+            </div>
+        </ModalLayout>
     )
 }

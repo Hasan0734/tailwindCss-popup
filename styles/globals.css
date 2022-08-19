@@ -130,7 +130,7 @@
   width: 100%;
 }
 
-.cookie_save {
+.cookie_modal .cookie_save {
   background: #D4D4D4;
   border-radius: 5px;
   font-family: 'Roboto';
@@ -140,4 +140,39 @@
   line-height: 14px;
   color: #6D6D6D;
   width: 100%;
+}
+
+.message_form .label_title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #3D3838;
+}
+
+.message_form textarea {
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px solid #AEAEAE;
+  border-radius: 4px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: #5F5D5D;
+  height: 157px;
+  padding: 19px 20px;
+}
+
+.message_form .send_message {
+  background: linear-gradient(270deg, #8D09CB -0.9%, #F41BC5 82.96%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: #FFFFFF;
 }
