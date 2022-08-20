@@ -25,6 +25,15 @@ const dayTo = [
     { id: 1, value: 'Mon-Wed-Fri' },
     { id: 2, value: 'Sat-Sun-Tu' },
 
+];
+
+const times = [
+    { id: 1, value: '10:30AM - 11:30AM' },
+    { id: 2, value: '12:00PM - 1:00PM' },
+    { id: 3, value: '3:00PM - 4:00PM' },
+    { id: 4, value: '4:30PM - 5:30PM' },
+    { id: 5, value: '6:00PM - 7:00PM' },
+    { id: 6, value: '7:30PM - 8:30PM' },
 ]
 
 export default function SubscribePopup({ isOpen, setIsOpen }:
@@ -32,10 +41,13 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
 
     const [selectedMinutes, setSelectedMinutes] = useState(minutes[0]);
     const [selectedDays, setSelectedDays] = useState(days[0]);
-    const [plan, setPlan] = useState('startup');
+    const [plan, setPlan] = useState('Group');
     const [selectdDayTo, setSelectedDayTo] = useState(dayTo[0])
+    const [selectedTime, setSelectedTime] = useState(times[0]);
 
 
+
+    console.log(selectedTime)
     return (
         <ModalLayout style={{
             size: 464, center: 'items-center',
@@ -61,7 +73,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                     <div>
                         <label className='label_title'>Set a weekly schedule</label>
 
-                        <div className='mt-3 grid grid-cols-2 gap-4 '>
+                        <div className='mt-3 grid grid-cols-2 gap-3 '>
                             {/* minutes per day */}
                             <div className='relative bg-[#1D4E60]
                                      rounded-[5px] flex col-span-2 sm:col-span-1 z-30'>
@@ -69,7 +81,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                     <Listbox.Button
                                         className="
                                     items-center px-3 py-2
-                                    flex gap-3 justify-between w-full">
+                                    flex justify-between w-full">
                                         <span className='text-white select_text'>
                                             {selectedMinutes.value} minutes per day
                                         </span>
@@ -100,7 +112,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                     <Listbox.Button
                                         className="
                                     items-center px-3 py-2
-                                    flex gap-3 justify-between w-full">
+                                    flex justify-between w-full">
                                         <span className='text-white select_text'>
                                             {selectedDays.value} days per week
                                         </span>
@@ -132,20 +144,20 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
 
                         <div className='mt-3 flex gap-2 justify-between'>
                             <div>
-                                <button className="label_btn bg-[#228891] py-[13px] px-[31px] 
+                                <button className="label_btn bg-[#228891] py-[13px] px-[26px] 
                                 border-dashed border border-[#1D4E60]">1 month</button>
                             </div>
                             <div className='relative'>
-                                <button className="label_btn bg-[#228891] py-[13px] px-[31px] 
+                                <button className="label_btn bg-[#228891] py-[13px] px-[26px] 
                                 border-dashed border border-[#1D4E60]">3 month</button>
                                 <span className='absolute bg-[#FFC200] 
-                                px-[8px] py-[2px] z-10 rounded-[10px] right-[5px] -top-[6px] discount_'>10%</span>
+                                px-[8px] py-[2px] z-10 rounded-[10px] right-[1px] -top-[7px] discount_'>10%</span>
                             </div>
                             <div className='relative'>
-                                <button className="label_btn bg-[#1D4E60] py-[13px] px-[31px] 
+                                <button className="label_btn bg-[#1D4E60] py-[13px] px-[26px] 
                                 ">6 month</button>
                                 <span className='absolute bg-[#FFC200] 
-                                px-[8px] py-[2px] z-10 rounded-[10px] right-[5px] -top-[6px] discount_'>33%</span>
+                                px-[8px] py-[2px] z-10 rounded-[10px] right-[1px] -top-[7px] discount_'>33%</span>
                             </div>
                         </div>
                     </div>
@@ -221,22 +233,19 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
 
                             </div>
                         </div>
-                        <div className='mt-4 grid grid-cols-2 gap-4 '>
-                            {/* minutes per day */}
-                            <div className='relative bg-[#1D4E60]
-                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-30'>
-                             
-                            </div>
-                            {/* days per week */}
 
-                            <div className='relative bg-[#1D4E60]
-                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-20'>
-                              
-                            </div>
+                        {plan === 'Group' && <div className='mt-4 grid grid-cols-2 gap-4'>
 
-                        </div>
+                            {times.map((time, i) => <div key={time.id}
+                                className='col-span-2 sm:col-span-1'>
+                                <button onClick={() => setSelectedTime(time)}
+                                    type="button"
+                                    className={`w-full px-4 py-[13px] ${selectedTime.id === time.id ? 'bg-[#1D4E60]' : 'bg-[#228891]'}
+                                 rounded-md uppercase time_btn`}>{time.value}</button>
+                            </div>)}
+
+                        </div>}
                     </div>
-                                                
                 </form>
             </div>
         </ModalLayout>

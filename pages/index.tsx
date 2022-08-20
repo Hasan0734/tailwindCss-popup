@@ -34,7 +34,6 @@ const Home: NextPage = () => {
       {subscribe &&
         <SubscribePopup isOpen={subscribe} setIsOpen={setSubscribe} />
       }
-
       <div className='p-4 flex gap-5'>
         <button
           onClick={() => setIsOpen(true)}
