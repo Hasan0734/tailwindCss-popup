@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import { Switch } from '@headlessui/react'
 import ModalLayout from '../ModalLayout/ModalLayout'
 export default function CookieModal({isOpen, setIsOpen}: {isOpen:boolean, setIsOpen:any}) {
-    const [enabled, setEnabled] = useState(false)
+    const [marketing, setMarketing] = useState(false);
+
+    const [preference, setPreference] = useState(false)
+
     return (
         <ModalLayout style={{
             size: 269, center: 'items-center',
@@ -32,7 +35,23 @@ export default function CookieModal({isOpen, setIsOpen}: {isOpen:boolean, setIsO
             </div>
 
             <div className="mt-4">
-                <h3 className='title'>Marketing & Analytics</h3>
+                    <div className='flex justify-between items-center'>
+                        <h3 className='title'>Marketing & Analytics</h3>
+                        <div className=' flex items-center'>
+                            <Switch
+                                checked={marketing}
+                                onChange={setMarketing}
+                                className={`${marketing ? 'bg-gray-400' : 'bg-gray-300'
+                                    } relative inline-flex h-[14px] w-[24px] items-center rounded-full`}
+                            >
+                                <span className="sr-only">Enable notifications</span>
+                                <span
+                                    className={`${marketing ? 'translate-x-[11px]' : 'translate-x-[2px]'
+                                        } inline-block h-3 w-3 transform rounded-full bg-gray-200`}
+                                />
+                            </Switch>
+                        </div>
+                   </div>
                 <p className='content_text mt-[6px]'>
                     These cookies can be set by our advertising partnes through our websites.
                 </p>
@@ -43,14 +62,14 @@ export default function CookieModal({isOpen, setIsOpen}: {isOpen:boolean, setIsO
                     <h3 className='title'>Preferences</h3>
                     <div className=' flex items-center'>
                         <Switch
-                            checked={enabled}
-                            onChange={setEnabled}
-                            className={`${enabled ? 'bg-gray-400' : 'bg-gray-300'
+                            checked={preference}
+                            onChange={setPreference}
+                            className={`${preference ? 'bg-gray-400' : 'bg-gray-300'
                                 } relative inline-flex h-[14px] w-[24px] items-center rounded-full`}
                         >
                             <span className="sr-only">Enable notifications</span>
                             <span
-                                className={`${enabled ? 'translate-x-[11px]' : 'translate-x-[2px]'
+                                className={`${preference ? 'translate-x-[11px]' : 'translate-x-[2px]'
                                     } inline-block h-3 w-3 transform rounded-full bg-gray-200`}
                             />
                         </Switch>

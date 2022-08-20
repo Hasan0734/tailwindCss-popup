@@ -11,7 +11,7 @@
 
 .user_name {
   padding-bottom: 0.5rem;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -21,7 +21,7 @@
 
 .sub_title {
   padding-bottom: 0.2rem;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -30,7 +30,7 @@
 }
 
 .question_title {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 11px;
@@ -43,7 +43,7 @@
 }
 
 .date_group_area .label_title {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -55,7 +55,7 @@
   background: rgba(255, 255, 255, 0.24);
   border: 1px solid #AEAEAE;
   border-radius: 4px;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -68,7 +68,7 @@
   background: linear-gradient(270deg, #8D09CB -0.9%, #F41BC5 82.96%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -82,7 +82,7 @@
   background: #FFFFFF;
   border: 1px solid #AEAEAE;
   border-radius: 1px;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -97,16 +97,16 @@
 
 /* cookies style */
 .cookie_modal .title {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 12px;
   line-height: 14px;
   color: #000000;
 }
 
 .cookie_modal .content_text {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -123,7 +123,7 @@
 .cookie_modal .cookie_accept {
   background: linear-gradient(269.9deg, #00CDAC 1.45%, #38BEBB 99.91%);
   border-radius: 5px;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -136,7 +136,7 @@
 .cookie_modal .cookie_save {
   background: #D4D4D4;
   border-radius: 5px;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -148,7 +148,7 @@
 /* send message style */
 
 .message_form .label_title {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -160,7 +160,7 @@
   background: rgba(255, 255, 255, 0.24);
   border: 1px solid #AEAEAE;
   border-radius: 4px;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -173,7 +173,7 @@
   background: linear-gradient(270deg, #8D09CB -0.9%, #F41BC5 82.96%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -184,7 +184,7 @@
 
 /* subscribe popup */
 .subscribe_popup .title {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -193,7 +193,7 @@
 }
 
 .subscribe_popup .sub_title {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -203,7 +203,7 @@
 }
 
 .subscribe_popup .label_title {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -212,7 +212,7 @@
 }
 
 .subscribe_popup .select_text {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -221,7 +221,7 @@
 }
 
 .subscribe_popup .label_btn {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -231,7 +231,7 @@
 }
 
 .subscribe_popup .discount_ {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -240,7 +240,7 @@
 }
 
 .subscribe_popup .sub_label {
-    font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -250,15 +250,16 @@
 
 
 .subscribe_popup .radio_btn {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   line-height: 15px;
   color: #FFFFFF;
 }
+
 .subscribe_popup .time_btn {
-font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -266,3 +267,46 @@ font-family: 'Montserrat';
   text-align: center;
   color: #FFFFFF;
 }
+
+.subscribe_popup .info_text {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.subscribe_popup .price_btn .price {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+.subscribe_popup .monthly {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.subscribe_popup .signin_btn {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #008080;
+}
+.subscribe_popup .cancel_plan {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;}

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ModalLayout from '../ModalLayout/ModalLayout';
 import { Listbox } from '@headlessui/react';
 import { RadioGroup } from '@headlessui/react'
+import Link from 'next/link';
+import { CheckIcon } from '@heroicons/react/solid';
 
 
 const minutes = [
@@ -42,15 +44,16 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
     const [selectedMinutes, setSelectedMinutes] = useState(minutes[0]);
     const [selectedDays, setSelectedDays] = useState(days[0]);
     const [plan, setPlan] = useState('Group');
-    const [selectdDayTo, setSelectedDayTo] = useState(dayTo[0])
+    const [selectdDayTo, setSelectedDayTo] = useState(dayTo[0]);
     const [selectedTime, setSelectedTime] = useState(times[0]);
+    const [agree, setAgree] = useState(false);
+
+    const [commitment, setCommitment] = useState('6 month');
 
 
-
-    console.log(selectedTime)
     return (
         <ModalLayout style={{
-            size: 464, center: 'items-center',
+            size: 464, center: '',
             boxShadow: 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]',
             background: 'bg-[#008080]'
         }}
@@ -142,22 +145,36 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                     <div className='mt-7'>
                         <label className='label_title'>Select a commitment level</label>
 
-                        <div className='mt-3 flex gap-2 justify-between'>
-                            <div>
-                                <button className="label_btn bg-[#228891] py-[13px] px-[26px] 
-                                border-dashed border border-[#1D4E60]">1 month</button>
+                        <div className='mt-3 grid grid-cols-3 gap-x-2 gap-y-4 sm:gap-y-2'>
+
+                            <div className='col-span-3 sm:col-span-1'>
+                                <button
+                                type="button"
+                                    onClick={() => setCommitment('1 month')}
+                                    className={`w-full label_btn ${commitment === '1 month' ? 'bg-[#1D4E60]' : 'bg-[#228891]'}
+                                 py-[13px] px-[26px]
+                                border-dashed border border-[#1D4E60]`}>1 month</button>
                             </div>
-                            <div className='relative'>
-                                <button className="label_btn bg-[#228891] py-[13px] px-[26px] 
-                                border-dashed border border-[#1D4E60]">3 month</button>
+                            <div onClick={() => setCommitment('3 month')} className='relative col-span-3 sm:col-span-1'>
+                                <button
+                                type="button"
+                                    onClick={() => setCommitment('2 month')}
+                                    className={`w-full label_btn ${commitment === '3 month' ? 'bg-[#1D4E60]' : ' bg-[#228891]'}
+                                 py-[13px] px-[26px]
+                                border-dashed border border-[#1D4E60]`}>3 month</button>
                                 <span className='absolute bg-[#FFC200] 
-                                px-[8px] py-[2px] z-10 rounded-[10px] right-[1px] -top-[7px] discount_'>10%</span>
+                                px-[8px] py-[2px] z-10 rounded-[10px]
+                                 right-[1px] -top-[7px] discount_'>10%</span>
                             </div>
-                            <div className='relative'>
-                                <button className="label_btn bg-[#1D4E60] py-[13px] px-[26px] 
-                                ">6 month</button>
+                            <div className='relative col-span-3 sm:col-span-1'>
+                                <button
+                                type="button"
+                                    onClick={() => setCommitment('6 month')}
+                                    className={`w-full label_btn ${commitment === '6 month' ? 'bg-[#1D4E60]' : 'bg-[#228891] '}
+                                 py-[13px] px-[26px]`}>6 month</button>
                                 <span className='absolute bg-[#FFC200] 
-                                px-[8px] py-[2px] z-10 rounded-[10px] right-[1px] -top-[7px] discount_'>33%</span>
+                                px-[8px] py-[2px] z-10 rounded-[10px]
+                                right-[1px] -top-[7px] discount_'>33%</span>
                             </div>
                         </div>
                     </div>
@@ -169,8 +186,9 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                             <label className='sub_label'>Type*</label>
                             <div className='mt-3 grid grid-cols-2 gap-4 '>
                                 <div className='px-4 bg-[#1D4E60]
-                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-30 radio_btn'>
-                                    <RadioGroup value={plan} onChange={setPlan} className="w-full flex items-center justify-between">
+                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-30 radio_btn   '>
+                                    <RadioGroup value={plan} onChange={setPlan}
+                                        className="w-full flex items-center justify-between py-[10px] sm:py-0">
                                         <RadioGroup.Option value="Group">
                                             {({ checked }) => (
                                                 <div className='flex gap-2 items-center cursor-pointer'>
@@ -234,7 +252,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                             </div>
                         </div>
 
-                        {plan === 'Group' && <div className='mt-4 grid grid-cols-2 gap-4'>
+                        <div className='mt-4 grid grid-cols-2 gap-4'>
 
                             {times.map((time, i) => <div key={time.id}
                                 className='col-span-2 sm:col-span-1'>
@@ -244,7 +262,47 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                  rounded-md uppercase time_btn`}>{time.value}</button>
                             </div>)}
 
-                        </div>}
+                        </div>
+                    </div>
+                    <div className='mt-2'>
+                        <p className="info_text">For any other convenient slot, write to
+                            {" "}
+                            <Link href='/'>
+                                <a className='text-[#FFC929]'>
+                                    support@mail.com
+                                </a>
+                            </Link>
+                        </p>
+                        <div
+                            onClick={() => setAgree(!agree)}
+
+                            className='mt-2 flex gap-2 items-center '>
+                            <div
+                                className='h-3 w-3 outline outline-offset-2 outline-1 cursor-pointer
+                                 outline-white rounded-[1px]'>
+                                {agree && <CheckIcon className='text-white' />}
+                            </div>
+                            <label className='info_text'>I will attend this session on a Laptop / PC</label>
+                        </div>
+                    </div>
+                    <div className='mt-5'>
+                        <div className='grid grid-cols-2 gap-3'>
+                            <div className='col-span-2 sm:col-span-1'>
+                                <div className='relative'>
+                                    <button className='px-3 py-2 bg-white price_btn rounded-[10px] w-full'>
+                                        <span className='price'>$ 2,500</span> / <span className='monthly'>month</span>
+                                    </button>
+                                    <span className='absolute bg-[#FFC200] 
+                                px-[8px] py-[2px] z-10 rounded-[10px] right-[1px] -top-[7px] discount_'>33%</span>
+                                </div>
+                            </div>
+                            <div className='col-span-2 sm:col-span-1'>
+                                <button className='px-3 py-[11px] bg-[#FFC929] signin_btn rounded-[40px] w-full'>
+                                    Sign Up
+                                </button>
+                            </div>
+                        </div>
+                        <p className='cancel_plan mt-5'>Change, pause or cancel your plan at any time.</p>
                     </div>
                 </form>
             </div>
