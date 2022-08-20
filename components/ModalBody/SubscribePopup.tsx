@@ -72,19 +72,16 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                     </div>
                 </div>
                 <form className='mt-11'>
-
+                    {/* schedule */}
                     <div>
                         <label className='label_title'>Set a weekly schedule</label>
 
                         <div className='mt-3 grid grid-cols-2 gap-3 '>
                             {/* minutes per day */}
-                            <div className='relative bg-[#1D4E60]
-                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-30'>
+                            <div className='schedule_area sm:col-span-1 z-30'>
                                 <Listbox value={selectedMinutes} onChange={setSelectedMinutes}>
                                     <Listbox.Button
-                                        className="
-                                    items-center px-3 py-2
-                                    flex justify-between w-full">
+                                        className="schedule_btn">
                                         <span className='text-white select_text'>
                                             {selectedMinutes.value} minutes per day
                                         </span>
@@ -93,11 +90,10 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                         </svg>
                                     </Listbox.Button>
 
-                                    <Listbox.Options className="absolute rounded-br-[5px] rounded-bl-[5px] top-8 bg-[#1D4E60] py-[5px] w-full">
+                                    <Listbox.Options className="select_options">
                                         {minutes.map((minute) => (
                                             <Listbox.Option
-                                                className=" text-white rounded-[5px] cursor-pointer
-                                             px-4 py-[5px] hover:bg-[#1c4250] my-1 select_text"
+                                                className="select_option hover:bg-[#1c4250]"
                                                 key={minute.id}
                                                 value={minute}
                                             >
@@ -109,13 +105,11 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                             </div>
                             {/* days per week */}
 
-                            <div className='relative bg-[#1D4E60]
-                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-20'>
+                            <div className='schedule_area sm:col-span-1 z-20'>
                                 <Listbox value={selectedDays} onChange={setSelectedDays}>
                                     <Listbox.Button
-                                        className="
-                                    items-center px-3 py-2
-                                    flex justify-between w-full">
+                                        className=" schedule_btn">
+
                                         <span className='text-white select_text'>
                                             {selectedDays.value} days per week
                                         </span>
@@ -124,11 +118,10 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                         </svg>
                                     </Listbox.Button>
 
-                                    <Listbox.Options className="absolute rounded-br-[5px] rounded-bl-[5px]  top-8 bg-[#1D4E60] py-[5px] w-full">
+                                    <Listbox.Options className="select_options">
                                         {days.map((day) => (
                                             <Listbox.Option
-                                                className=" text-white rounded-[5px] cursor-pointer
-                                             px-4 py-[5px] hover:bg-[#1c4250] my-1 select_text"
+                                                className="select_option hover:bg-[#1c4250]"
                                                 key={day.id}
                                                 value={day}
                                             >
@@ -141,44 +134,47 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
 
                         </div>
                     </div>
-
+                    {/*  select commitment level */}
                     <div className='mt-7'>
                         <label className='label_title'>Select a commitment level</label>
 
                         <div className='mt-3 grid grid-cols-3 gap-x-2 gap-y-4 sm:gap-y-2'>
-
+                            {/* month  btn one */}
                             <div className='col-span-3 sm:col-span-1'>
                                 <button
-                                type="button"
+                                    type="button"
                                     onClick={() => setCommitment('1 month')}
-                                    className={`w-full label_btn ${commitment === '1 month' ? 'bg-[#1D4E60]' : 'bg-[#228891]'}
-                                 py-[13px] px-[26px]
-                                border-dashed border border-[#1D4E60]`}>1 month</button>
+                                    className={`commitment_level
+                                     ${commitment === '1 month' ? 'bg-[#1D4E60]' :
+                                            'bg-[#228891] commitment_level_border'}
+                                `}>1 month</button>
                             </div>
+                            {/* month  btn two*/}
                             <div onClick={() => setCommitment('3 month')} className='relative col-span-3 sm:col-span-1'>
                                 <button
-                                type="button"
+                                    type="button"
                                     onClick={() => setCommitment('2 month')}
-                                    className={`w-full label_btn ${commitment === '3 month' ? 'bg-[#1D4E60]' : ' bg-[#228891]'}
-                                 py-[13px] px-[26px]
-                                border-dashed border border-[#1D4E60]`}>3 month</button>
-                                <span className='absolute bg-[#FFC200] 
-                                px-[8px] py-[2px] z-10 rounded-[10px]
-                                 right-[1px] -top-[7px] discount_'>10%</span>
+                                    className={`commitment_level
+                                    ${commitment === '3 month' ? 'bg-[#1D4E60]' :
+                                            ' bg-[#228891] commitment_level_border'}
+                                
+                                `}>3 month</button>
+                                <span className='discount discount_text'>10%</span>
                             </div>
+                            {/* month  btn three*/}
                             <div className='relative col-span-3 sm:col-span-1'>
                                 <button
-                                type="button"
+                                    type="button"
                                     onClick={() => setCommitment('6 month')}
-                                    className={`w-full label_btn ${commitment === '6 month' ? 'bg-[#1D4E60]' : 'bg-[#228891] '}
-                                 py-[13px] px-[26px]`}>6 month</button>
-                                <span className='absolute bg-[#FFC200] 
-                                px-[8px] py-[2px] z-10 rounded-[10px]
-                                right-[1px] -top-[7px] discount_'>33%</span>
+                                    className={`commitment_level
+                                    ${commitment === '6 month' ? 'bg-[#1D4E60]' :
+                                            'bg-[#228891] commitment_level_border'}
+                                `}>6 month</button>
+                                <span className='discount discount_text'>33%</span>
                             </div>
                         </div>
                     </div>
-
+                    {/* Request a Slot (Suitable Days & Time) */}
                     <div className='mt-7'>
                         <label className='label_title'>Request a Slot (Suitable Days & Time)</label>
 
@@ -192,9 +188,9 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                         <RadioGroup.Option value="Group">
                                             {({ checked }) => (
                                                 <div className='flex gap-2 items-center cursor-pointer'>
-                                                    <div className={`w-3 h-3 rounded-full
+                                                    <div className={`type_radio
                                                     ${checked ? 'bg-white' : 'bg-transparent'}
-                                                    outline outline-offset-2 outline-1 outline-white`}></div>
+                                                  `}></div>
                                                     <div>
                                                         Group
                                                     </div>
@@ -204,9 +200,9 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                         <RadioGroup.Option value="Individual">
                                             {({ checked }) => (
                                                 <div className='flex gap-2 items-center cursor-pointer'>
-                                                    <div className={`w-3 h-3 rounded-full
+                                                    <div className={`type_radio
                                                     ${checked ? 'bg-white' : 'bg-transparent'}
-                                                    outline outline-offset-2 outline-1 outline-white`}></div>
+                                                    `}></div>
                                                     <div>
                                                         Individual
                                                     </div>
@@ -223,9 +219,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                      rounded-[5px] flex col-span-2 sm:col-span-1 z-20'>
                                     <Listbox value={selectdDayTo} onChange={setSelectedDayTo}>
                                         <Listbox.Button
-                                            className="
-                                    items-center px-3 py-2
-                                    flex gap-3 justify-between w-full">
+                                            className="schedule_btn">
                                             <span className='text-white select_text'>
                                                 {selectdDayTo.value}
                                             </span>
@@ -234,11 +228,10 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                             </svg>
                                         </Listbox.Button>
 
-                                        <Listbox.Options className="absolute rounded-br-[5px] rounded-bl-[5px]  top-8 bg-[#1D4E60] py-[5px] w-full">
+                                        <Listbox.Options className="select_options">
                                             {dayTo.map((day) => (
                                                 <Listbox.Option
-                                                    className=" text-white rounded-[5px] cursor-pointer
-                                             px-4 py-2 hover:bg-[#1c4250] my-1 select_text"
+                                                    className="select_option hover:bg-[#1c4250]"
                                                     key={day.id}
                                                     value={day}
                                                 >
@@ -264,6 +257,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
 
                         </div>
                     </div>
+
                     <div className='mt-2'>
                         <p className="info_text">For any other convenient slot, write to
                             {" "}
@@ -278,8 +272,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
 
                             className='mt-2 flex gap-2 items-center '>
                             <div
-                                className='h-3 w-3 outline outline-offset-2 outline-1 cursor-pointer
-                                 outline-white rounded-[1px]'>
+                                className='checkBox'>
                                 {agree && <CheckIcon className='text-white' />}
                             </div>
                             <label className='info_text'>I will attend this session on a Laptop / PC</label>

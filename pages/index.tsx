@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import { useState } from 'react';
 import ModalLayout from '../components//ModalLayout/ModalLayout'
+import BookDemo from '../components/ModalBody/BookDemo/BookDemo';
 import CookieModal from '../components/ModalBody/CookieModal';
 import MessageModal from '../components/ModalBody/MessageModal';
 import SubscribePopup from '../components/ModalBody/SubscribePopup';
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
   const [openCookie, setOpenCoolie] = useState(false)
   const [messageModal, setMessageModal] = useState(false)
   const [subscribe, setSubscribe] = useState(false)
+  const [bookDemo, setBookDemo] = useState(false)
 
   return (
     <>
@@ -34,7 +36,12 @@ const Home: NextPage = () => {
       {subscribe &&
         <SubscribePopup isOpen={subscribe} setIsOpen={setSubscribe} />
       }
-      <div className='p-4 flex gap-5'>
+
+      {/* book demo popup Popup */}
+      
+      {bookDemo && <BookDemo isOpen={bookDemo} setIsOpen={setBookDemo} />}
+
+      <div className='p-4 flex gap-5 flex-wrap'>
         <button
           onClick={() => setIsOpen(true)}
           className='px-3 py-2 rounded-md
@@ -63,6 +70,13 @@ const Home: NextPage = () => {
        bg-orange-400 text-white
        font-semibold uppercase'>
           Subscribe !!</button>
+        <button
+          onClick={() => setBookDemo(true)}
+          className='px-3 py-2 rounded-md
+       bg-lime-500 text-white
+       font-semibold uppercase'>
+          Book Demo !!</button>
+        
 
       </div>
     </>
