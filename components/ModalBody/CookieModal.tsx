@@ -6,7 +6,8 @@ export default function CookieModal({isOpen, setIsOpen}: {isOpen:boolean, setIsO
     return (
         <ModalLayout style={{
             size: 269, center: 'items-center',
-            boxShadow: 'filter-none'
+            boxShadow: 'filter-none',
+            background: 'bg-white'
         }}
             isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className='pt-[21px] px-[19px]  pb-[7px] cookie_modal'>

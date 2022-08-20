@@ -5,7 +5,8 @@ export default function MessageModal({ isOpen, setIsOpen }: {isOpen: boolean, se
     return (
         <ModalLayout style={{
             size: 433, center: 'items-center',
-            boxShadow: 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]'
+            boxShadow: 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]',
+            background: 'bg-white'
         }}
             isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className='pt-[58px] pb-[32px] pl-[47px] pr-[36px]'>
