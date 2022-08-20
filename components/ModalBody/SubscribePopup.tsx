@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModalLayout from '../ModalLayout/ModalLayout';
 import { Listbox } from '@headlessui/react';
-
+import { RadioGroup } from '@headlessui/react'
 
 
 const minutes = [
@@ -21,14 +21,19 @@ const days = [
     { id: 6, value: 6 },
     { id: 7, value: 7 },
 ]
+const dayTo = [
+    { id: 1, value: 'Mon-Wed-Fri' },
+    { id: 2, value: 'Sat-Sun-Tu' },
+
+]
 
 export default function SubscribePopup({ isOpen, setIsOpen }:
     { isOpen: boolean, setIsOpen: any }) {
 
     const [selectedMinutes, setSelectedMinutes] = useState(minutes[0]);
-
     const [selectedDays, setSelectedDays] = useState(days[0]);
-
+    const [plan, setPlan] = useState('startup');
+    const [selectdDayTo, setSelectedDayTo] = useState(dayTo[0])
 
 
     return (
@@ -52,6 +57,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                     </div>
                 </div>
                 <form className='mt-11'>
+
                     <div>
                         <label className='label_title'>Set a weekly schedule</label>
 
@@ -143,6 +149,94 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                             </div>
                         </div>
                     </div>
+
+                    <div className='mt-7'>
+                        <label className='label_title'>Request a Slot (Suitable Days & Time)</label>
+
+                        <div className='mt-3'>
+                            <label className='sub_label'>Type*</label>
+                            <div className='mt-3 grid grid-cols-2 gap-4 '>
+                                <div className='px-4 bg-[#1D4E60]
+                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-30 radio_btn'>
+                                    <RadioGroup value={plan} onChange={setPlan} className="w-full flex items-center justify-between">
+                                        <RadioGroup.Option value="Group">
+                                            {({ checked }) => (
+                                                <div className='flex gap-2 items-center cursor-pointer'>
+                                                    <div className={`w-3 h-3 rounded-full
+                                                    ${checked ? 'bg-white' : 'bg-transparent'}
+                                                    outline outline-offset-2 outline-1 outline-white`}></div>
+                                                    <div>
+                                                        Group
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </RadioGroup.Option>
+                                        <RadioGroup.Option value="Individual">
+                                            {({ checked }) => (
+                                                <div className='flex gap-2 items-center cursor-pointer'>
+                                                    <div className={`w-3 h-3 rounded-full
+                                                    ${checked ? 'bg-white' : 'bg-transparent'}
+                                                    outline outline-offset-2 outline-1 outline-white`}></div>
+                                                    <div>
+                                                        Individual
+                                                    </div>
+                                                </div>
+                                            )}
+                                        </RadioGroup.Option>
+
+                                    </RadioGroup>
+                                </div>
+
+                                {/* selct day to day */}
+
+                                <div className='relative bg-[#1D4E60]
+                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-20'>
+                                    <Listbox value={selectdDayTo} onChange={setSelectedDayTo}>
+                                        <Listbox.Button
+                                            className="
+                                    items-center px-3 py-2
+                                    flex gap-3 justify-between w-full">
+                                            <span className='text-white select_text'>
+                                                {selectdDayTo.value}
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5" fill="none">
+                                                <path d="M8.76322 0.222057C8.68865 0.151666 8.60007 0.0958202 8.50257 0.0577167C8.40506 0.0196132 8.30053 -3.05749e-08 8.19496 -3.51893e-08C8.0894 -3.98036e-08 7.98487 0.0196132 7.88736 0.0577167C7.78985 0.0958202 7.70128 0.151666 7.62671 0.222057C5.87011 1.87684 3.12848 1.87684 1.37189 0.222057C1.22118 0.080082 1.01677 0.000321169 0.803633 0.000321159C0.590496 0.00032115 0.386087 0.0800819 0.235377 0.222057C0.0846662 0.364032 -2.43294e-08 0.556591 -3.31059e-08 0.757373C-4.18823e-08 0.958156 0.0846662 1.15072 0.235377 1.29269L3.93507 4.77794C4.00964 4.84833 4.09822 4.90418 4.19573 4.94228C4.29323 4.98039 4.39776 5 4.50333 5C4.60889 5 4.71342 4.98039 4.81093 4.94228C4.90844 4.90418 4.99701 4.84833 5.07158 4.77794L8.77128 1.29269C9.07757 1.00415 9.07757 0.51819 8.76322 0.222057Z" fill="white" />
+                                            </svg>
+                                        </Listbox.Button>
+
+                                        <Listbox.Options className="absolute rounded-br-[5px] rounded-bl-[5px]  top-8 bg-[#1D4E60] py-[5px] w-full">
+                                            {dayTo.map((day) => (
+                                                <Listbox.Option
+                                                    className=" text-white rounded-[5px] cursor-pointer
+                                             px-4 py-2 hover:bg-[#1c4250] my-1 select_text"
+                                                    key={day.id}
+                                                    value={day}
+                                                >
+                                                    {day.value}
+                                                </Listbox.Option>
+                                            ))}
+                                        </Listbox.Options>
+                                    </Listbox>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div className='mt-4 grid grid-cols-2 gap-4 '>
+                            {/* minutes per day */}
+                            <div className='relative bg-[#1D4E60]
+                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-30'>
+                             
+                            </div>
+                            {/* days per week */}
+
+                            <div className='relative bg-[#1D4E60]
+                                     rounded-[5px] flex col-span-2 sm:col-span-1 z-20'>
+                              
+                            </div>
+
+                        </div>
+                    </div>
+                                                
                 </form>
             </div>
         </ModalLayout>
