@@ -4,7 +4,7 @@ import { Dialog } from '@headlessui/react'
 export default function ModalLayout({ isOpen, setIsOpen, children, style }:
     {
         isOpen: boolean, setIsOpen: any, children: any, style:
-        { center: string, size: number, boxShadow:string, background:string, rounded:string }
+        { center: string, size: number, boxShadow: string, background: string, rounded: string }
     }) {
 
     return (
@@ -18,9 +18,7 @@ export default function ModalLayout({ isOpen, setIsOpen, children, style }:
 
             <div className={`fixed inset-0 flex  justify-center p-4 
              h-screen overflow-scroll scrollbar-hide ${style.center}`}>
-                <Dialog.Panel className={`w-full`} style={{maxWidth: style.size}}>
-                
-                
+                <Dialog.Panel className={`w-full`} style={{ maxWidth: style.size }}>
                     <div className={` ${style.background} ${style.rounded} ${style.boxShadow}`}>
                         {children}
                     </div>

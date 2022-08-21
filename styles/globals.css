@@ -120,6 +120,46 @@
   color: #FFFFFF;
 }
 
+.select_person_area {
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  border: 1px solid #C4C4C4;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 32px 19px 24px 22px;
+}
+
+.select_person_area .person_title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.select_person_area .person_age {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.select_person_area .person_count {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  color: #5F5D5D;
+}
+
+
+
+
 
 
 /* cookies style */
