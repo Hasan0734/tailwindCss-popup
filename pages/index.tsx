@@ -6,7 +6,7 @@ import CookieModal from '../components/ModalBody/CookieModal';
 import Maps from '../components/ModalBody/Maps';
 import MessageModal from '../components/ModalBody/MessageModal';
 import SubscribePopup from '../components/ModalBody/SubscribePopup';
-import UserModal from '../components/ModalBody/UserModal';
+import UserModal from '../components/ModalBody/UserPopup/UserModal';
 
 const Home: NextPage = () => {
 
