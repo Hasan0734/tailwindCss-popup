@@ -30,33 +30,33 @@ const times = [
 
 export default function SelectTime({ selectedTime, setSelectedTime }: { selectedTime: any, setSelectedTime: any }) {
     return (
-       
-          
-                <Listbox value={selectedTime} onChange={setSelectedTime}>
-                    <Listbox.Button className="select_btn px-4 py-3 flex
+
+
+        <Listbox value={selectedTime} onChange={setSelectedTime}>
+            <Listbox.Button className="select_btn px-4 py-3 flex
                                         gap-2 items-center justify-between w-full">
                 <ClockIcon strokeWidth="0.06rem" className='text-[#E51075]' width={25} />
                 <span className='content text-[#E51075]'>{selectedTime ? selectedTime?.time : 'Select time'}</span>
-                        <ChevronDownIcon width={25} />
-                    </Listbox.Button>
-                    <Listbox.Options
+                <ChevronDownIcon width={25} />
+            </Listbox.Button>
+            <Listbox.Options
                 className="select_times 
                         scrollbar-thin scrollbar-thumb-gray-300
                          scrollbar-track-gray-200 overflow-y-scroll z-40">
-                                                  
-                        {times.map((time: any) => (
-                            <Listbox.Option
-                                className="hover:bg-gray-200 py-2 cursor-pointer"
-                                key={time.id}
-                                value={time}
-                            >
-                                {time.time}
-                            </Listbox.Option>
-                        ))}
-                    </Listbox.Options>
-                </Listbox>
-       
 
-       
+                {times.map((time: any) => (
+                    <Listbox.Option
+                        className="hover:bg-gray-200 py-2 cursor-pointer"
+                        key={time.id}
+                        value={time}
+                    >
+                        {time.time}
+                    </Listbox.Option>
+                ))}
+            </Listbox.Options>
+        </Listbox>
+
+
+
     )
 }
