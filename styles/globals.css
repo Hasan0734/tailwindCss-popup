@@ -560,3 +560,69 @@
   line-height: 23px;
   color: #4B4B4B;
 }
+
+/* mpas area */
+
+.maps_area .title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #3D3838;
+}
+
+.maps_area .content_title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #3D3838;
+}
+
+.maps_area .sub_title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 25px;
+  color: #3C3A3A;
+}
+
+.maps_area .content_text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #5F5D5D;
+  text-align: justify;
+}
+
+.maps_area .read_more {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  color: #3C3A3A;
+}
+
+.maps_area .tool_tip {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  color: #3C3A3A;
+}
+
+.maps_area .polygon {
+  clip-path: polygon(0 0, 47% 100%, 100% 0);
+  background: white;
+  width: 15px;
+  height: 15px;
+      bottom: -12px;
+        left: 46%;
+}
