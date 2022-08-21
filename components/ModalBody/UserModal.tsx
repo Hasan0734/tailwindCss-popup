@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import DatePicker from "react-datepicker";
 import dateFormat from "dateformat";
-import { Popover } from '@headlessui/react'
 import { Listbox } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon } from '@heroicons/react/solid'
+import { ClockIcon } from '@heroicons/react/outline'
 import ModalLayout from '../ModalLayout/ModalLayout';
-
+import { Popover } from '@headlessui/react'
 
 
 const childrens = [
@@ -66,118 +66,46 @@ export default function UserModal({ isOpen, setIsOpen }: { isOpen: boolean, setI
                 <form className='date_group_area'>
                     <div>
                         <label className='label_title'>Tell me your preffered date and group size</label>
-                        <div className='mt-2 grid grid-cols-2 gap-x-3 gap-y-4'>
-                            <Popover className="relative col-span-2 sm:col-span-1">
-                                <Popover.Button className="input_box w-full px-6 py-2 flex justify-between items-center">
-                                    {dateFormat(startDate, "dd mmm")}
-                                    <span className='chevron'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </span>
-                                </Popover.Button>
-                                <Popover.Panel className="absolute z-10">
-                                    <DatePicker selected={startDate} onChange={handleDateChange} inline />
-                                </Popover.Panel>
-                            </Popover>
-
-                            <Popover className="relative col-span-2 sm:col-span-1">
-                                <Popover.Button className="input_box w-full px-6 py-2 flex justify-between items-center">
-                                    {dateFormat(startTime, "h: MM")}
-                                    <span className='chevron'>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </span>
-                                </Popover.Button>
-                                <Popover.Panel className="absolute z-10">
-                                    <DatePicker selected={startTime}
-                                        onChange={handleTimeChange}
-                                        inline
-                                        showTimeSelect
-                                        showTimeSelectOnly
-                                        timeIntervals={15}
-                                        timeCaption="Time"
-                                        dateFormat="h:mm"
-                                    />
-                                </Popover.Panel>
-                            </Popover>
-
-                            {/* adults */}
-                            <div className='col-span-2 sm:col-span-1'>
-                                <Listbox value={selectedAdult} onChange={setSelectedAdult}>
-                                    <div className='relative'>
-                                        <Listbox.Button className="input_box w-full pl-1 pr-6 py-[0.4rem] flex justify-between items-center">
-                                            <div className='flex items-center gap-2'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                                    <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z" fill="black" fillOpacity="0.3" />
-                                                </svg>
-                                                {selectedAdult.value} Adults
+                        <div className='mt-2  border border-[#AEAEAE] rounded-[10px]
+                        '>
+                            <div className='flex gap-2 w-full divide-x divide-[#AEAEAE]'>
+                                <div className='w-full'>
+                                    <Popover className="relative ">
+                                        <Popover.Button className="dates_btn px-6 py-3 flex 
+                                        gap-2 items-center justify-between w-full">
+                                            <div className='flex flex-col'>
+                                                <span className='uppercase dates_text'>Dates</span>
+                                                <span className='month'>Aug</span>
                                             </div>
-                                            <span className="chevron">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            </span></Listbox.Button>
-
-                                        <Listbox.Options className='absolute w-full  px-1 py-3 rounded border bg-white z-20'>
-                                            {adults.map((adult) => (
-                                                <Listbox.Option
-                                                    className={` ${adult.id === selectedAdult.id ? 'bg-blue-200' : ''} 
-                                             hover:bg-gray-200 rounded px-2 my-1 cursor-pointer flex gap-2 items-center`}
-                                                    key={adult.id}
-                                                    value={adult}
-                                                >
-                                                    {adult.id === selectedAdult.id ? <span className='w-3'><CheckIcon width={15} /> </span> : <span className='w-3'></span>}
-                                                    {adult.value} Adults
-                                                </Listbox.Option>
-                                            ))}
-                                        </Listbox.Options>
-                                    </div>
-
-                                </Listbox>
-
-                            </div>
-
-                            {/* childrens */}
-
-                            <div className='col-span-2 sm:col-span-1'>
-                                <Listbox value={selectedChildren} onChange={setSelectedChildren}>
-                                    <div className='relative'>
-                                        <Listbox.Button className="input_box w-full pl-1 pr-6 py-[0.4rem] flex justify-between items-center">
-                                            <div className='flex items-center gap-2'>
-                                                <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" fill="none">
-                                                    <path d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V16H16V14C16 11.34 10.67 10 8 10Z" fill="black" fillOpacity="0.3" />
-                                                </svg>
-                                                {selectedChildren.value} Childrens
+                                            <ChevronDownIcon width={25} />
+                                        </Popover.Button>
+                                        <Popover.Panel className="absolute z-10 bg-white px-2 py-2">
+                                            <div className="grid grid-cols-2">
+                                                <a href="/analytics">Analytics</a>
+                                                <a href="/engagement">Engagement</a>
+                                                <a href="/security">Security</a>
+                                                <a href="/integrations">Integrations</a>
                                             </div>
-                                            <span className="chevron">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            </span></Listbox.Button>
 
-                                        <Listbox.Options className='absolute w-full  px-1 py-3 rounded border bg-white z-20'>
-                                            {childrens.map((child) => (
-                                                <Listbox.Option
-                                                    className={` ${child.id === selectedChildren.id ? 'bg-blue-200' : ''}  hover:bg-gray-200 rounded px-2 my-1 cursor-pointer flex gap-2 items-center`}
-                                                    key={child.id}
-                                                    value={child}
-                                                >
-                                                    {child.id === selectedChildren.id ? <span className='w-3'><CheckIcon width={15} /> </span> : <span className='w-3'></span>}  {child.value} Childrens
-                                                </Listbox.Option>
-                                            ))}
-                                        </Listbox.Options>
-                                    </div>
+                                            <img src="/solutions.jpg" alt="" />
+                                        </Popover.Panel>
+                                    </Popover>
+                                </div>
+                                <div className='w-full'>
+                                    <Popover className="relative">
+                                        <Popover.Button className="select_btn px-4 py-3 flex
+                                        gap-2 items-center justify-between w-full">
+                                            <ClockIcon strokeWidth="0.06rem" className='text-[#3D3838]' width={25} />
+                                            <span className='content'>Select time</span>
+                                            <ChevronDownIcon width={25} />
+                                        </Popover.Button>
+                                        <Popover.Panel className="absolute z-10">
+                                           
+                                        </Popover.Panel>
 
-                                </Listbox>
+                                    </Popover>
+                                </div>
                             </div>
-
-
                         </div>
                     </div>
                     <div className='mt-7'>

@@ -51,6 +51,36 @@
   color: #3D3838;
 }
 
+.date_group_area .dates_btn .dates_text {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #3D3838;
+}
+
+.date_group_area .dates_btn .month {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #3D3838;
+}
+
+.date_group_area .select_btn .content {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #3D3838;
+}
+
 .date_group_area textarea {
   background: rgba(255, 255, 255, 0.24);
   border: 1px solid #AEAEAE;
@@ -78,22 +108,6 @@
 }
 
 
-.date_group_area .input_box {
-  background: #FFFFFF;
-  border: 1px solid #AEAEAE;
-  border-radius: 1px;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 12px;
-  color: rgba(0, 0, 0, 0.66);
-}
-
-.date_group_area .input_box .chevron {
-  color: rgba(0, 0, 0, 0.4);
-  width: 12px;
-}
 
 /* cookies style */
 .cookie_modal .title {
@@ -623,6 +637,6 @@
   background: white;
   width: 15px;
   height: 15px;
-      bottom: -12px;
-        left: 46%;
+  bottom: -12px;
+  left: 46%;
 }
