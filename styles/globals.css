@@ -354,6 +354,7 @@
 
 /* live demo class popup */
 
+/* class description */
 .class_info .title {
   font-family: 'Montserrat';
   font-style: normal;
@@ -399,6 +400,7 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* class add cart */
 .add_cart_card .title {
   font-family: 'Montserrat';
   font-style: normal;
@@ -509,8 +511,9 @@
   line-height: 22px;
   text-align: center;
 }
+
 .add_cart_card .filling_text {
-font-family: 'Montserrat';
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -518,12 +521,42 @@ font-family: 'Montserrat';
   text-align: center;
   color: #000000;
 }
+
 .add_cart_card .hurry_up {
-font-family: 'Montserrat';
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
   color: #17A966;
+}
+
+/* requirements section */
+
+.requirement .title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.requirement .title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.requirement .re_title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+  color: #4B4B4B;
 }

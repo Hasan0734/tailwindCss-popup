@@ -41,7 +41,8 @@ export default function UserModal({ isOpen, setIsOpen }: { isOpen: boolean, setI
         <ModalLayout style={{
             size: 433, center: '', boxShadow:
                 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]',
-            background: 'bg-white'
+            background: 'bg-white',
+            rounded: 'rounded'
         }}
             isOpen={isOpen} setIsOpen={setIsOpen}>
             <div className='pt-[60px] pb-[21px] px-[42px]'>

@@ -55,7 +55,8 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
         <ModalLayout style={{
             size: 464, center: '',
             boxShadow: 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]',
-            background: 'bg-[#008080]'
+            background: 'bg-[#008080]',
+            rounded: 'rounded'
         }}
             isOpen={isOpen} setIsOpen={setIsOpen}>
             <div className='pt-[49px] pb-[21px] px-[38px] subscribe_popup'>

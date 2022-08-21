@@ -2,6 +2,7 @@ import React from 'react'
 import ModalLayout from '../../ModalLayout/ModalLayout'
 import AddCart from './AddCart'
 import ClassInformation from './ClassInformation'
+import Requirements from './Requirements'
 
 export default function BookDemo({ isOpen, setIsOpen }:
     { isOpen: boolean, setIsOpen: any }) {
@@ -10,7 +11,8 @@ export default function BookDemo({ isOpen, setIsOpen }:
             <ModalLayout style={{
                 size: 1164, center: '',
                 boxShadow: 'drop-shadow-[0_4px_20px_rgba(155,155,155,0.25)]',
-                background: 'bg-white'
+                background: 'bg-white',
+                rounded: 'rounded-2xl'
             }}
                 isOpen={isOpen} setIsOpen={setIsOpen}>
                 <div className='pt-[29px] pb-16 px-[32px] subscribe_popup</div>'>
@@ -19,10 +21,9 @@ export default function BookDemo({ isOpen, setIsOpen }:
                             <ClassInformation />
                             <AddCart/>
                         </div>
-                        {/* <div>
-                            <h2 className='title'>Hello world</h2>
-                            <p className='desc_text'>Kathak dance online classes will introduce you to the key terms, mudras, and eight-eye glances of Kathak dance</p>
-                        </div> */}
+                        <div className='mt-9 '>
+                            <Requirements/>
+                        </div>
                     </div>
                 </div>
             </ModalLayout>
