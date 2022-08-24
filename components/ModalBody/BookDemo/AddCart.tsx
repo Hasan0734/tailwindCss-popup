@@ -11,10 +11,20 @@ const people = [
     { id: 5, name: 'Katelyn Rohan', unavailable: false },
 ]
 
+const times = [
+    { id: 1, time: '10:30 AM - 11:30 AM' },
+    { id: 2, time: '12:00 PM - 1:00 PM' },
+    { id: 3, time: '3:00 PM - 4:00 PM' },
+    { id: 4, time: '4:30 PM - 5:30 PM' },
+    { id: 5, time: '6:00 PM - 7:00 PM<' },
+    { id: 6, time: '7:30 PM - 8:30 PM' },
+]
 
 export default function AddCart() {
     const [selectedPerson, setSelectedPerson] = useState(people[0]);
     const [agree, setAgree] = useState(false)
+    const [slectDate, setSelectDate] = useState('16 May');
+    const [selectTime, setSelectTime] = useState('10:30 AM - 11:30 AM')
     return (
         <div className='col-span-2 md:col-span-1 flex justify-center'>
             <div className='w-full max-w-[530px] p-6 bg-[#F9F9F9] rounded-xl add_cart_card'>
@@ -57,22 +67,38 @@ export default function AddCart() {
                             <p className='sub_label'>India Standard Time (IST) <span className='text-blue-600'>Change</span></p>
                             <div className='relative'>
                                 <div className='grid grid-cols-2 md:grid-cols-4 gap-2 mt-3'>
-                                    <div className='date_area bg-[#17A966] text-white px-9 py-3 cursor-pointer'>
+                                    <div
+                                        onClick={() => setSelectDate('16 May')}
+                                        className={`date_area ${slectDate === '16 May' ? 'bg-[#17A966] text-white'
+                                            : 'bg-[#F9F9F9] text-black'}
+                                         text-white px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>16</h2>
                                         <h6 className='date_text'>May</h6>
                                     </div>
-                                    <div className='date_area bg-[#F9F9F9] text-black px-9 py-3 cursor-pointer'>
+                                    <div
+                                        onClick={() => setSelectDate('17 May')}
+                                        className={`date_area ${slectDate === '17 May' ? 'bg-[#17A966] text-white'
+                                            : 'bg-[#F9F9F9] text-black'}
+                                         text-white px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>17</h2>
                                         <h6 className='date_text'>May</h6>
                                     </div>
-                                    <div className='date_area bg-[#F9F9F9] text-black  px-9 py-3 cursor-pointer'>
+                                    <div
+                                        onClick={() => setSelectDate('18 May')}
+                                        className={`date_area ${slectDate === '18 May' ? 'bg-[#17A966] text-white'
+                                            : 'bg-[#F9F9F9] text-black'}
+                                          px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>18</h2>
                                         <h6 className='date_text'>May</h6>
                                     </div>
-                                    <div className='date_area bg-[#F9F9F9] text-black  px-9 py-3 cursor-pointer'>
+                                    <div
+                                        onClick={() => setSelectDate('19 May')}
+                                        className={`date_area ${slectDate === '19 May' ? 'bg-[#17A966]  text-white '
+                                            : 'bg-[#F9F9F9]  text-black '}
+                                        px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>19</h2>
                                         <h6 className='date_text'>May</h6>
@@ -87,27 +113,16 @@ export default function AddCart() {
                         </div>
                         {/* times */}
                         <div className='mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4'>
-                            <div className='bg-[#F9F9F9] time_text rounded-lg px-5 py-3 border border-[#D6D6D6]'>
-                                <button>10:30 AM - 11:30 AM</button>
+                            {times.map(t => (<div key={t.id}
+
+                                onClick={() => setSelectTime(t.time)}
+                                className={`${selectTime === t.time ? 'bg-[#17A966] text-white' : 'bg-[#F9F9F9] text-black'}
+                            time_text rounded-lg px-5 py-3 border
+                             border-[#D6D6D6] cursor-pointer`}
+                            >
+                                <button type='button'>10:30 AM - 11:30 AM</button>
                             </div>
-                            <div className='bg-[#F9F9F9] time_text rounded-lg px-5 py-3 border border-[#D6D6D6]'>
-                                <button>12:00 PM - 1:00 PM</button>
-                            </div>
-                            <div className='bg-[#F9F9F9] time_text rounded-lg px-5 py-3 border border-[#D6D6D6]'>
-                                <button>3:00 PM - 4:00 PM</button>
-                            </div>
-                            <div className='bg-[#F9F9F9] time_text rounded-lg px-5 py-3 border border-[#D6D6D6]'>
-                                <button>12:00 PM - 1:00 PM</button>
-                            </div>
-                            <div className='bg-[#F9F9F9] time_text rounded-lg px-5 py-3 border border-[#D6D6D6]'>
-                                <button>4:30 PM - 5:30 PM</button>
-                            </div>
-                            <div className='bg-[#F9F9F9] time_text rounded-lg px-5 py-3 border border-[#D6D6D6]'>
-                                <button>6:00 PM - 7:00 PM</button>
-                            </div>
-                            <div className='bg-[#F9F9F9] time_text rounded-lg px-5 py-3 border border-[#D6D6D6]'>
-                                <button>7:30 PM - 8:30 PM</button>
-                            </div>
+                            ))}
                         </div>
                     </div>
                     <div className='mt-3'>
@@ -118,11 +133,11 @@ export default function AddCart() {
                         </p>
                     </div>
                     <div className='mt-3'>
-                        <span onClick={()=> setAgree(!agree)} className='flex gap-2 items-center'>
+                        <span onClick={() => setAgree(!agree)} className='flex gap-2 items-center'>
                             <div className='h-6 w-6 rounded-lg bg-[#F9F9F9]
                              border border-[#D6D6D6] cursor-pointer'>
                                 {agree && <CheckIcon />}
-                             </div>
+                            </div>
                             <label className='confirm_text'>I will attend this session on a Laptop / PC</label>
                         </span>
                     </div>

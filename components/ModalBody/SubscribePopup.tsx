@@ -287,7 +287,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                                         <span className='price'>$ 2,500</span> / <span className='monthly'>month</span>
                                     </button>
                                     <span className='absolute bg-[#FFC200] 
-                                px-[8px] py-[2px] z-10 rounded-[10px] right-[1px] -top-[7px] discount_'>33%</span>
+                                px-[8px] z-10 rounded-[10px] right-[1px] -top-[7px] discount_'>33%</span>
                                 </div>
                             </div>
                             <div className='col-span-2 sm:col-span-1'>

@@ -45,7 +45,7 @@
 .date_group_area .label_title {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 12px;
   line-height: 14px;
   color: #3D3838;
@@ -217,7 +217,7 @@
 .message_form .label_title {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 12px;
   line-height: 14px;
   color: #3D3838;
@@ -549,7 +549,6 @@
   font-size: 16px;
   line-height: 20px;
   text-align: center;
-  color: #000000;
 }
 
 .add_cart_card .content {
