@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Listbox } from '@headlessui/react'
-import { CheckIcon, ChevronLeftIcon } from '@heroicons/react/solid'
-import Link from 'next/link'
+import { CheckIcon } from '@heroicons/react/solid'
+import Link from 'next/link';
+import SlotSlider from './SlotSlider';
+
 
 const people = [
     { id: 1, name: 'Durward Reynolds', unavailable: false },
@@ -23,8 +25,8 @@ const times = [
 export default function AddCart() {
     const [selectedPerson, setSelectedPerson] = useState(people[0]);
     const [agree, setAgree] = useState(false)
-    const [slectDate, setSelectDate] = useState('16 May');
     const [selectTime, setSelectTime] = useState('10:30 AM - 11:30 AM')
+
     return (
         <div className='col-span-2 md:col-span-1 flex justify-center'>
             <div className='w-full max-w-[530px] p-6 bg-[#F9F9F9] rounded-xl add_cart_card'>
@@ -62,55 +64,7 @@ export default function AddCart() {
 
                     {/* choise slot session */}
                     <div className='mt-4'>
-                        <div>
-                            <label className='label_text'>Choose a slot for the session</label>
-                            <p className='sub_label'>India Standard Time (IST) <span className='text-blue-600'>Change</span></p>
-                            <div className='relative'>
-                                <div className='grid grid-cols-2 md:grid-cols-4 gap-2 mt-3'>
-                                    <div
-                                        onClick={() => setSelectDate('16 May')}
-                                        className={`date_area ${slectDate === '16 May' ? 'bg-[#17A966] text-white'
-                                            : 'bg-[#F9F9F9] text-black'}
-                                         text-white px-9 py-3 cursor-pointer`}>
-                                        <h6 className='date_text'>Today</h6>
-                                        <h2 className='date py-3'>16</h2>
-                                        <h6 className='date_text'>May</h6>
-                                    </div>
-                                    <div
-                                        onClick={() => setSelectDate('17 May')}
-                                        className={`date_area ${slectDate === '17 May' ? 'bg-[#17A966] text-white'
-                                            : 'bg-[#F9F9F9] text-black'}
-                                         text-white px-9 py-3 cursor-pointer`}>
-                                        <h6 className='date_text'>Today</h6>
-                                        <h2 className='date py-3'>17</h2>
-                                        <h6 className='date_text'>May</h6>
-                                    </div>
-                                    <div
-                                        onClick={() => setSelectDate('18 May')}
-                                        className={`date_area ${slectDate === '18 May' ? 'bg-[#17A966] text-white'
-                                            : 'bg-[#F9F9F9] text-black'}
-                                          px-9 py-3 cursor-pointer`}>
-                                        <h6 className='date_text'>Today</h6>
-                                        <h2 className='date py-3'>18</h2>
-                                        <h6 className='date_text'>May</h6>
-                                    </div>
-                                    <div
-                                        onClick={() => setSelectDate('19 May')}
-                                        className={`date_area ${slectDate === '19 May' ? 'bg-[#17A966]  text-white '
-                                            : 'bg-[#F9F9F9]  text-black '}
-                                        px-9 py-3 cursor-pointer`}>
-                                        <h6 className='date_text'>Today</h6>
-                                        <h2 className='date py-3'>19</h2>
-                                        <h6 className='date_text'>May</h6>
-                                    </div>
-
-                                </div>
-                                <button className='absolute -right-[2%] top-1/2 w-6 h-6
-                             rounded-full bg-white
-                             drop-shadow-[0px_3px_4px_rgba(192,167,167,0.25)]
-                             '><ChevronLeftIcon width={20} /></button>
-                            </div>
-                        </div>
+                        <SlotSlider />
                         {/* times */}
                         <div className='mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4'>
                             {times.map(t => (<div key={t.id}
@@ -157,8 +111,8 @@ export default function AddCart() {
                     <div className='mt-4'>
                         <p className='filling_text'><span className='hurry_up'>Hurry up!</span> Slots are filling fast</p>
                     </div>
-                </form>
-            </div>
-        </div>
+                </form >
+            </div >
+        </div >
     )
 }

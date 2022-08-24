@@ -59,11 +59,11 @@ export default function ServiceModal({ isOpen, setIsOpen }:
                         </div>
                         <div className='mt-6 classes'>
                             <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
-                                <ClassCard/>
-                                <ClassCard/>
-                                <ClassCard/>
-                                <ClassCard/>
-                
+                                <ClassCard />
+                                <ClassCard />
+                                <ClassCard />
+                                <ClassCard />
+
                             </div>
                         </div>
                     </div>

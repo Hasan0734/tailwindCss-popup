@@ -13,10 +13,10 @@ export default class ClassCard extends Component {
                     className='flex
                     flex-col sm:flex-row
                     justify-center items-center gap-4 mt-3'>
-                    
+
                     <div className='w-full flex justify-center sm:justify-start'>
                         <img className='w-full max-h-[250px] sm:max-w-full
-                        sm:max-h-[142px] rounded-md' src='/assets/images/classImg.png' />
+                        sm:max-h-[142px] rounded-md' src='/assets/images/classImg.png' alt='class img' />
                     </div>
                     <div className=''>
                         <div>
