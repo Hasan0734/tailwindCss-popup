@@ -4,7 +4,7 @@ import { ClockIcon, UserIcon } from '@heroicons/react/outline';
 import { ChevronDownIcon, MinusIcon, PlusIcon } from '@heroicons/react/solid';
 
 export default function SelectPerson() {
-    const [persons, setPersons] = useState({ adults: 0, childrens: 0, infans: 0, pets: 0 })
+    const [persons, setPersons] = useState({ adults: 1, childrens: 0, infans: 0, pets: 0 })
 
 
     const { adults, childrens, infans, pets } = persons
@@ -23,7 +23,7 @@ export default function SelectPerson() {
         }
     }
     const handleRemoveCount = (type: string) => {
-        if (type === 'adults' && adults > 0) {
+        if (type === 'adults' && adults > 1) {
             setPersons({ ...persons, adults: adults - 1 })
         }
         if (type === 'childrens' && childrens > 0) {
@@ -48,14 +48,15 @@ export default function SelectPerson() {
                         <div className='flex gap-2'>
                             <UserIcon width={20} strokeWidth="0.05rem" className="text=[#4B4B4B]" />
                             <span className=''>
-                                4 person
+                                {adults + childrens + infans + pets} person
                             </span>
                         </div>
                         <ChevronDownIcon width={25} />
                     </Popover.Button>
-                    <Popover.Panel className="absolute z-10 w-full select_person_area">
+                    <Popover.Panel
+                        className="absolute z-10  select_person_area w-[347px] right-0">
                         <div className="grid grid-cols-1 gap-y-8">
-                            
+
                             {/* adults */}
                             <div className='flex justify-between'>
                                 <div>
@@ -64,12 +65,11 @@ export default function SelectPerson() {
                                 </div>
                                 <div className='flex gap-3 items-center'>
                                     <div className='add_person'>
-                                        <button onClick={() => handleRemoveCount('adults')}
+                                        {adults > 1 && <button onClick={() => handleRemoveCount('adults')}
                                             type="button" className='border border-[#C4C4C4] p-[5px] rounded-full'
-                                            disabled={adults > 0 ? false : true}>
-
+                                        >
                                             <MinusIcon width={15} />
-                                        </button>
+                                        </button>}
                                     </div>
                                     <div className='person_count'>{persons.adults}</div>
 
@@ -91,12 +91,12 @@ export default function SelectPerson() {
                                 </div>
                                 <div className='flex gap-3 items-center'>
                                     <div className='add_person'>
-                                        <button type="button"
+                                        {childrens > 0 && <button type="button"
                                             onClick={() => handleRemoveCount('childrens')}
                                             className='border border-[#C4C4C4] p-[5px]  rounded-full'
-                                            disabled={childrens > 0 ? false : true}>
+                                        >
                                             <MinusIcon width={15} />
-                                        </button>
+                                        </button>}
                                     </div>
                                     <div className='person_count'>{persons.childrens}</div>
 
@@ -117,13 +117,13 @@ export default function SelectPerson() {
                                 </div>
                                 <div className='flex gap-3 items-center'>
                                     <div className='add_person'>
-                                        <button
+                                        {infans > 0 && <button
                                             onClick={() => handleRemoveCount('infans')}
                                             type="button"
                                             className='border border-[#C4C4C4] p-[5px] rounded-full'
-                                            disabled={infans > 0 ? false : true}>
+                                        >
                                             <MinusIcon width={15} />
-                                        </button>
+                                        </button>}
                                     </div>
                                     <div className='person_count'>
                                         {persons.infans}
@@ -147,12 +147,12 @@ export default function SelectPerson() {
                                 </div>
                                 <div className='flex gap-3 items-center'>
                                     <div className='add_person'>
-                                        <button
+                                        {pets > 0 && <button
                                             onClick={() => handleRemoveCount('pets')}
                                             type="button" className='border border-[#C4C4C4] p-[5px] rounded-full'
-                                            disabled={pets > 0 ? false : true}>
+                                        >
                                             <MinusIcon width={15} />
-                                        </button>
+                                        </button>}
                                     </div>
                                     <div className='person_count'>{persons.pets}</div>
 

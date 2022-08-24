@@ -48,27 +48,21 @@ export default function UserModal({ isOpen, setIsOpen }: { isOpen: boolean, setI
                 {/* horizantal line */}
                 <div className='h-[1px] bg-[#AEAEAE] mt-5 mb-4'></div>
 
+
+                <div className='date_group_area'>
+                    <label className='label_title'>Tell me your preffered date and group size</label>
+                    <div className='mt-2  border border-[#AEAEAE] rounded-[10px]
+                        '>
+                        <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 w-full divide-y sm:divide-y-0 sm:divide-x divide-[#AEAEAE]'>
+                            <SelectDates />
+                            <SelectPerson />
+                        </div>
+
+                    </div>
+                </div>
+
                 <form className='date_group_area'>
 
-                    <div>
-                        <label className='label_title'>Tell me your preffered date and group size</label>
-                        <div className='mt-2  border border-[#AEAEAE] rounded-[10px]
-                        '>
-                            <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 w-full divide-x divide-[#AEAEAE]'>
-
-                                <div className='w-full'>
-                                    <SelectDates />
-                                </div>
-                                <div className='w-full relative border-t sm:border-t-0  border-[#AEAEAE]'>
-                                    <SelectTime selectedTime={selectedTime}
-                                        setSelectedTime={setSelectedTime} />
-                                </div>
-                            </div>
-                            <div className='border-t  border-[#AEAEAE]'>
-                                <SelectPerson />
-                            </div>
-                        </div>
-                    </div>
                     {/* textara input section*/}
 
                     <div className='mt-7'>
