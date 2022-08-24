@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import ModalLayout from '../../ModalLayout/ModalLayout'
 import Banner from './Banner'
+import ClassCard from './ClassCard'
 
 export default function ServiceModal({ isOpen, setIsOpen }:
     { isOpen: boolean, setIsOpen: any }) {
     const [active, setActive] = useState('online')
-        
+
     return (
-  
+
         <>
             <ModalLayout style={{
                 size: 1196, center: '',
@@ -19,12 +20,13 @@ export default function ServiceModal({ isOpen, setIsOpen }:
                 <div className='p-[22px] service_popup'>
                     <div>
                         <Banner />
+                        {/* tab section */}
                         <div className='mt-2'>
                             <div className='tab flex gap-3 border-b border-[#E6EEF8]'>
-                                <div className={ `
+                                <div className={`
                                 ${active === 'online' ? 'border-b-[2.5px] border-[#224F9C]' : ''}
                                  py-2`}>
-            
+
                                     <button
                                         onClick={() => setActive('online')}
                                         className='flex gap-1 tab_btn '>
@@ -53,6 +55,15 @@ export default function ServiceModal({ isOpen, setIsOpen }:
                                         </svg> {" "}Offline
                                     </button>
                                 </div>
+                            </div>
+                        </div>
+                        <div className='mt-6 classes'>
+                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+                                <ClassCard/>
+                                <ClassCard/>
+                                <ClassCard/>
+                                <ClassCard/>
+                
                             </div>
                         </div>
                     </div>

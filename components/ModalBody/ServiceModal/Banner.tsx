@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 export default function Banner() {
-    const [activeTab, setActiveTab] = useState('')
+    const [activeTab, setActiveTab] = useState('classes')
     return (
         <div className='banner_container relative'>
             <div className='service_banner'>

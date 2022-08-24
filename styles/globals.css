@@ -804,5 +804,50 @@
   font-size: 16px;
   line-height: 19px;
   color: #64748B;
-  padding: 10px ;
+  padding: 10px;
+}
+
+.classes .card .title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #172E59;
+}
+
+.classes .card .card_body {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #172E59;
+}
+
+.classes .card .price_area {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #172E59;
+}
+
+.classes .card .price_area .price {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #172E59;
+}
+
+.classes .card .see_detail {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
 }
