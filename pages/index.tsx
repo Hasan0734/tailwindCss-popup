@@ -5,6 +5,7 @@ import BookDemo from '../components/ModalBody/BookDemo/BookDemo';
 import CookieModal from '../components/ModalBody/CookieModal';
 import Maps from '../components/ModalBody/Maps';
 import MessageModal from '../components/ModalBody/MessageModal';
+import ServiceModal from '../components/ModalBody/ServiceModal/ServiceModal';
 import SubscribePopup from '../components/ModalBody/SubscribePopup';
 import UserModal from '../components/ModalBody/UserPopup/UserModal';
 
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
   const [subscribe, setSubscribe] = useState(false);
   const [bookDemo, setBookDemo] = useState(false);
   const [maps, setMaps] = useState(false);
+  const [moreService, setMoreService] = useState(false)
 
   return (
     <>
@@ -48,6 +50,9 @@ const Home: NextPage = () => {
       {maps && <Maps isOpen={maps} setIsOpen={setMaps} />
       }
 
+      {moreService && <ServiceModal isOpen={moreService} setIsOpen={setMoreService} />
+      }
+
       <div className='p-4 flex gap-5 flex-wrap'>
         <button
           onClick={() => setIsOpen(true)}
@@ -62,8 +67,6 @@ const Home: NextPage = () => {
        bg-blue-400 text-white
        font-semibold uppercase'>
           Accept Cookies !!</button>
-
-
         <button
           onClick={() => setMessageModal(true)}
           className='px-3 py-2 rounded-md
@@ -89,6 +92,12 @@ const Home: NextPage = () => {
        bg-lime-500 text-white
        font-semibold uppercase'>
           Maps !!</button>
+        <button
+          onClick={() => setMoreService(true)}
+          className='px-3 py-2 rounded-md
+       bg-lime-500 text-white
+       font-semibold uppercase'>
+          More Service !!</button>
 
 
       </div>
