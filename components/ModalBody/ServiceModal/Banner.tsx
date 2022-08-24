@@ -41,13 +41,13 @@ export default function Banner() {
                     <button
                         onClick={() => setActiveTab("experiences")}
                         className={`${activeTab === 'experiences' ? 'active_tab' : ''} none_active`}>
-                     
+
                         Experiences
                     </button>
                     <button
                         onClick={() => setActiveTab("primePacks")}
                         className={`${activeTab === 'primePacks' ? 'active_tab' : ''} none_active`}>
-                     
+
                         Prime Packs
                     </button>
                 </div>
