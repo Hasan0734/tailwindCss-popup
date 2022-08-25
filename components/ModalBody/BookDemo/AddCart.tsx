@@ -29,7 +29,8 @@ export default function AddCart() {
 
     return (
         <div className='col-span-2 md:col-span-1 flex justify-center'>
-            <div className='w-full max-w-[530px] p-6 bg-[#F9F9F9] rounded-xl add_cart_card'>
+            <div className='w-full max-w-[530px]
+             p-0 sm:p-6 bg-[#F9F9F9] rounded-xl add_cart_card'>
                 <div>
                     <h3 className='title'>Book a Demo for Live Class</h3>
                     <p className='sub_title mt-2'>Select 30 Minutes Demo Slot</p>
@@ -66,7 +67,7 @@ export default function AddCart() {
                     <div className='mt-4'>
                         <SlotSlider />
                         {/* times */}
-                        <div className='mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                        <div className='mt-5 grid grid-cols-1 xs:grid-cols-2 gap-4'>
                             {times.map(t => (<div key={t.id}
 
                                 onClick={() => setSelectTime(t.time)}
@@ -88,9 +89,11 @@ export default function AddCart() {
                     </div>
                     <div className='mt-3'>
                         <span onClick={() => setAgree(!agree)} className='flex gap-2 items-center'>
-                            <div className='h-6 w-6 rounded-lg bg-[#F9F9F9]
+                            <div>
+                                <div className='h-6 w-6 rounded-lg bg-[#F9F9F9]
                              border border-[#D6D6D6] cursor-pointer'>
-                                {agree && <CheckIcon />}
+                                    {agree && <CheckIcon />}
+                                </div>
                             </div>
                             <label className='confirm_text'>I will attend this session on a Laptop / PC</label>
                         </span>

@@ -66,7 +66,7 @@ export default function SlotSlider() {
                                         onClick={() => setSelectDate('16 May')}
                                         className={`date_area ${slectDate === '16 May' ? 'bg-[#17A966] text-white'
                                             : 'bg-[#F9F9F9] text-black'}
-                                         text-white px-9 py-3 cursor-pointer`}>
+                                         text-white px-3 sm:px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>16</h2>
                                         <h6 className='date_text'>May</h6>
@@ -74,10 +74,10 @@ export default function SlotSlider() {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div
-                                        onClick={() => setSelectDate('17 May')}
-                                        className={`date_area ${slectDate === '17 May' ? 'bg-[#17A966] text-white'
+                                        onClick={() => setSelectDate('16 May')}
+                                        className={`date_area ${slectDate === '16 May' ? 'bg-[#17A966] text-white'
                                             : 'bg-[#F9F9F9] text-black'}
-                                         text-white px-9 py-3 cursor-pointer`}>
+                                         text-white px-3 sm:px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>17</h2>
                                         <h6 className='date_text'>May</h6>
@@ -85,10 +85,10 @@ export default function SlotSlider() {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div
-                                        onClick={() => setSelectDate('18 May')}
-                                        className={`date_area ${slectDate === '18 May' ? 'bg-[#17A966] text-white'
+                                        onClick={() => setSelectDate('16 May')}
+                                        className={`date_area ${slectDate === '16 May' ? 'bg-[#17A966] text-white'
                                             : 'bg-[#F9F9F9] text-black'}
-                                          px-9 py-3 cursor-pointer`}>
+                                         text-white px-3 sm:px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>18</h2>
                                         <h6 className='date_text'>May</h6>
@@ -96,15 +96,16 @@ export default function SlotSlider() {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div
-                                        onClick={() => setSelectDate('19 May')}
-                                        className={`date_area ${slectDate === '19 May' ? 'bg-[#17A966]  text-white '
-                                            : 'bg-[#F9F9F9]  text-black '}
-                                        px-9 py-3 cursor-pointer`}>
+                                        onClick={() => setSelectDate('16 May')}
+                                        className={`date_area ${slectDate === '16 May' ? 'bg-[#17A966] text-white'
+                                            : 'bg-[#F9F9F9] text-black'}
+                                         text-white px-3 sm:px-9 py-3 cursor-pointer`}>
                                         <h6 className='date_text'>Today</h6>
                                         <h2 className='date py-3'>19</h2>
                                         <h6 className='date_text'>May</h6>
                                     </div>
                                 </SwiperSlide>
+                          
                            
 
 

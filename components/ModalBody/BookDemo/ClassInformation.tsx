@@ -7,7 +7,7 @@ export default function ClassInformation() {
                 <img className='rounded-md' src='/assets/images/class-img.png' alt='class photo' />
             </div>
 
-            <div className='mt-6 w-[76%] sm:w-full'>
+            <div className='mt-6 xs:w-[76%] w-full'>
                 <div >
                     <h3 className='title'>Output Expected</h3>
                     <p className='desc_text mt-2'>Kathak dance online classes will introduce you to the key terms, mudras, and eight-eye glances of Kathak dance</p>

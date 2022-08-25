@@ -22,18 +22,17 @@ export default class ClassCard extends Component {
                         <div>
                             <p className='card_body py-3'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. sunt nostrud....</p>
                         </div>
-                        <div className='flex items-center justify-between'>
+                        <div className='block xs:flex mt-2 items-center justify-between'>
                             <div>
                                 <h3 className='price_area'>
                                     <span className='price'>$120</span>
                                     /Person
                                 </h3>
                             </div>
-                            <div>
+                            <div className='mt-4 sm:mt-0'>
                                 <button className='flex gap-2 items-center
-                                 bg-[#224F9C] rounded-lg
-                                 see_detail
-                                 px-6 py-[9px]
+                                 bg-[#224F9C] rounded-lg see_detail px-6 py-[9px]
+                                
                                  '>
                                     See Details
                                     <span>

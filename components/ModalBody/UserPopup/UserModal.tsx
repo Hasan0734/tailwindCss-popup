@@ -3,46 +3,22 @@ import React, { useState } from 'react'
 
 import ModalLayout from '../../ModalLayout/ModalLayout';
 
-import SelectTime from './SelectTime';
 import SelectPerson from './SelectPerson';
 import SelectDates from './SelectDates';
 import InfoTop from './InfoTop';
 
-
-const childrens = [
-    { id: 1, value: 0 },
-    { id: 2, value: 1 },
-    { id: 3, value: 2 },
-    { id: 4, value: 3 },
-    { id: 5, value: 4 },
-]
-const adults = [
-    { id: 1, value: 0 },
-    { id: 2, value: 1 },
-    { id: 3, value: 2 },
-    { id: 4, value: 3 },
-    { id: 5, value: 4 },
-]
-
 export default function UserModal({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: any }) {
 
-    const [startDate, setStartDate] = useState(new Date());
-    const [selectedTime, setSelectedTime] = useState(null);
-    const [selectedChildren, setSelectedChildren] = useState(childrens[0])
-    const [selectedAdult, setSelectedAdult] = useState(adults[0])
 
-    const handleDateChange = (e: any) => {
-        setStartDate(e);
-    };
     return (
         <ModalLayout style={{
-            size: 433, center: '', boxShadow:
+            size: 433, center: 'items-start', boxShadow:
                 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]',
             background: 'bg-white',
             rounded: 'rounded'
         }}
             isOpen={isOpen} setIsOpen={setIsOpen}>
-            <div className='pt-[60px] pb-[21px] px-[42px]'>
+            <div className='pt-[60px] pb-[21px] px-[25px] xs:px-[42px]'>
                 {/* info-section like image, name*/}
                 <InfoTop />
                 {/* horizantal line */}
@@ -53,7 +29,8 @@ export default function UserModal({ isOpen, setIsOpen }: { isOpen: boolean, setI
                     <label className='label_title'>Tell me your preffered date and group size</label>
                     <div className='mt-2  border border-[#AEAEAE] rounded-[10px]
                         '>
-                        <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 w-full divide-y sm:divide-y-0 sm:divide-x divide-[#AEAEAE]'>
+                        <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 w-full 
+                        divide-y sm:divide-y-0 sm:divide-x divide-[#AEAEAE]'>
                             <SelectDates />
                             <SelectPerson />
                         </div>
@@ -89,7 +66,7 @@ export default function UserModal({ isOpen, setIsOpen }: { isOpen: boolean, setI
                     {/* submit button */}
                     <div className='mt-11'>
                         <button className='offer_btn
-                         w-full py-[9px]'>
+                         w-full py-[9px] text-[15px]'>
                             Request a personalized offer
                         </button>
                     </div>

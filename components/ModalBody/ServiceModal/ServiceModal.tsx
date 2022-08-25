@@ -11,7 +11,7 @@ export default function ServiceModal({ isOpen, setIsOpen }:
 
         <>
             <ModalLayout style={{
-                size: 1196, center: '',
+                size: 1196, center: 'items-start lg:items-center',
                 boxShadow: 'drop-shadow-[0_4px_20px_rgba(155,155,155,0.25)]',
                 background: 'bg-white',
                 rounded: 'rounded-2xl'
@@ -19,7 +19,7 @@ export default function ServiceModal({ isOpen, setIsOpen }:
                 isOpen={isOpen} setIsOpen={setIsOpen}>
                 <div className='p-[22px] service_popup'>
                     <div>
-                        <Banner />
+                        <Banner setIsOpen={setIsOpen} />
                         {/* tab section */}
                         <div className='mt-2'>
                             <div className='tab flex gap-3 border-b border-[#E6EEF8]'>

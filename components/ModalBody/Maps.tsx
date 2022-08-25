@@ -5,7 +5,7 @@ import ModalLayout from '../ModalLayout/ModalLayout'
 export default function Maps({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: any }) {
     return (
         <ModalLayout style={{
-            size: 638, center: 'items-center',
+            size: 638, center: 'items-start sm:items-center',
             boxShadow: '',
             background: 'bg-white',
             rounded: 'rounded-[5px]'

@@ -4,7 +4,7 @@ import ModalLayout from '../ModalLayout/ModalLayout'
 export default function MessageModal({ isOpen, setIsOpen }: {isOpen: boolean, setIsOpen:any}) {
     return (
         <ModalLayout style={{
-            size: 433, center: 'items-center',
+            size: 433, center: 'items-start lg:items-center',
             boxShadow: 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]',
             background: 'bg-white',
             rounded: 'rounded'
@@ -12,7 +12,7 @@ export default function MessageModal({ isOpen, setIsOpen }: {isOpen: boolean, se
             isOpen={isOpen} setIsOpen={setIsOpen}>
         <div className='pt-[58px] pb-[32px] pl-[47px] pr-[36px]'>
         
-            <div className='flex gap-5 flex-col items-center sm:flex-row sm:items-start'>
+            <div className='flex gap-5 flex-col items-center xs:flex-row sm:items-start'>
                 <div>
                     <img className='w-[84px] h-[80px] rounded-full user_img' src='/assets/images/userImg.png' />
                 </div>

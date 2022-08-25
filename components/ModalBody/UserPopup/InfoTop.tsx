@@ -3,9 +3,12 @@ import React from 'react'
 export default function InfoTop() {
     return (
         <>
-            <div className='flex gap-5 flex-col items-center sm:flex-row sm:items-start'>
+            <div className='flex gap-5 
+            flex-col items-center 
+            xs:flex-row xs:items-start'>
                 <div>
-                    <img className='w-[84px] h-[80px] rounded-full user_img' src='/assets/images/userImg.png' />
+                    <img className='w-[84px] h-[80px] 
+                    rounded-full user_img' src='/assets/images/userImg.png' />
                 </div>
                 <div>
                     <h2 className='user_name'>Hello!</h2>

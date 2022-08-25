@@ -30,12 +30,27 @@ const dayTo = [
 ];
 
 const times = [
-    { id: 1, value: '10:30AM - 11:30AM' },
-    { id: 2, value: '12:00PM - 1:00PM' },
-    { id: 3, value: '3:00PM - 4:00PM' },
-    { id: 4, value: '4:30PM - 5:30PM' },
-    { id: 5, value: '6:00PM - 7:00PM' },
-    { id: 6, value: '7:30PM - 8:30PM' },
+
+    {
+        steps: [
+            { id: 1, value: '10:30 AM - 11:30 AM' },
+            { id: 2, value: '12:00 PM - 1:00 PM' },
+            { id: 3, value: '3:00 PM - 4:00 PM' },
+            { id: 4, value: '4:30 PM - 5:30 PM' },
+            { id: 5, value: '6:00 PM - 7:00 PM' },
+            { id: 6, value: '7:30 PM - 8:30 PM' }
+        ]
+    },
+    {
+        steps: [
+            { id: 7, value: '10:15 AM - 11:15 AM' },
+            { id: 8, value: '11:15 PM - 1:15 PM' },
+            { id: 9, value: '2:15 PM - 3:15 PM' },
+            { id: 10, value: '3:15 PM - 4:15 PM' },
+            { id: 11, value: '4:15 PM - 5:15 PM' },
+            { id: 12, value: '5:30 PM - 6:15 PM' }
+        ]
+    }
 ]
 
 export default function SubscribePopup({ isOpen, setIsOpen }:
@@ -45,7 +60,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
     const [selectedDays, setSelectedDays] = useState(days[0]);
     const [plan, setPlan] = useState('Group');
     const [selectdDayTo, setSelectedDayTo] = useState(dayTo[0]);
-    const [selectedTime, setSelectedTime] = useState(times[0]);
+    const [selectedTime, setSelectedTime] = useState(times[0].steps[0]);
     const [agree, setAgree] = useState(false);
 
     const [commitment, setCommitment] = useState('6 month');
@@ -53,7 +68,7 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
 
     return (
         <ModalLayout style={{
-            size: 464, center: '',
+            size: 464, center: 'items-start',
             boxShadow: 'drop-shadow-[0_1px_4px_rgba(0,0,0,0.25)]',
             background: 'bg-[#008080]',
             rounded: 'rounded'
@@ -246,15 +261,29 @@ export default function SubscribePopup({ isOpen, setIsOpen }:
                             </div>
                         </div>
 
-                        <div className='mt-4 grid grid-cols-2 gap-4'>
+                        <div className='py-4  overflow-x-scroll flex  gap-4 scrollbar-thin 
+                         scrollbar-track-gray-500 scrollbar-thumb-gray-100 scrollbar-track-rounded-full' >
 
-                            {times.map((time, i) => <div key={time.id}
-                                className='col-span-2 sm:col-span-1'>
-                                <button onClick={() => setSelectedTime(time)}
-                                    type="button"
-                                    className={`w-full px-4 py-[13px] ${selectedTime.id === time.id ? 'bg-[#1D4E60]' : 'bg-[#228891]'}
-                                 rounded-md uppercase time_btn`}>{time.value}</button>
-                            </div>)}
+                            {times.map((time, i) => (
+                                <div key={i} className='w-[388px]'>
+                                    <div className='grid gap-4 grid-rows-3 grid-cols-2 w-[388px]'>
+                                        {time.steps.map((step, index) => (
+                                            <div key={index}
+                                                className='w-[186px]'>
+                                                <button
+                                                    onClick={() => setSelectedTime(step)}
+                                                    type="button"
+                                                    className={`w-[186px] px-4 py-[13px]
+
+                                                     ${selectedTime.id === step.id ? 'bg-[#1D4E60]' : 'bg-[#228891]'}
+                                                     rounded-md uppercase time_btn`}>
+
+                                                    {step.value}</button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
 
                         </div>
                     </div>

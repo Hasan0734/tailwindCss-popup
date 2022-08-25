@@ -114,7 +114,6 @@
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 15px;
   line-height: 18px;
   text-align: center;
   color: #FFFFFF;
@@ -696,6 +695,7 @@
 .react-datepicker {
   display: flex !important;
   border: none !important;
+  max-width: 433px;
 }
 
 .react-datepicker .react-datepicker__month-container {
@@ -744,12 +744,11 @@
 /* service popup */
 
 .banner_container {
-  height: 190px;
+
 }
 
 .banner_container .service_banner {
   background: #224F9C;
-  height: 190px;
   border-radius: 16px;
 }
 
@@ -758,7 +757,6 @@
   background: url('/assets/images/service-banner.png');
   border-radius: 16px;
   background-repeat: no-repeat;
-  height: 190px;
   background-size: cover;
   background-position: 100% 100%;
   opacity: 0.3;
@@ -766,7 +764,6 @@
 
 .banner_container .main_content {
   background: linear-gradient(90deg, #224F9C 0%, rgba(34, 79, 156, 0) 62.11%);
-  height: 190px;
   padding: 28px 20px;
   border-radius: 16px;
 }
@@ -778,25 +775,23 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
-  font-size: 28px;
   line-height: 34px;
   color: #FFFFFF;
 }
 
-.banner_container .main_content .tab {
+.banner_container  .tab {
   background: #FFFFFF;
   box-shadow: 0px 6px 60px rgba(0, 0, 0, 0.05);
-  border-radius: 48px;
 }
 
-.banner_container .main_content .tab .active_tab {
+.banner_container  .tab .active_tab {
   background: #224F9C;
   border-radius: 48px;
   padding: 10px 26px !important;
   color: #FFFFFF !important;
 }
 
-.banner_container .main_content .tab .none_active {
+.banner_container  .tab .none_active {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
